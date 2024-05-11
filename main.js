@@ -26,14 +26,25 @@ document.addEventListener('DOMContentLoaded', function(){
     let count = 0;
 
     addButton.addEventListener('click', function(){
+        if ( count < 12 ){
         count++
         currentNumber.innerHTML = count;
+        if (count >= 0) {
+            currentNumber.classList.remove('negativo');
+        }
+    } else {
+        addButton.disabled = true; 
+    }
     });
 
     subButton.addEventListener('click', function(){
         count--
         currentNumber.innerHTML = count;
+        if (count < 0){
+            currentNumber.classList.add('negativo')
+        }
     });
+
 
 })
 
